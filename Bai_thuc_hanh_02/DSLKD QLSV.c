@@ -213,7 +213,7 @@ void processList(LList L) {
 int main() {
     LList L;
     int kt = 0;
-    int targetID;     
+    int tempID;     
     Node *foundNode;  
     Data x;
     initList(&L);
@@ -249,24 +249,24 @@ int main() {
 
             case 3:
                 printf("Nhap Ma SV cua nut dung truoc: ");
-                scanf("%d", &targetID);
-                foundNode = searchByID(L, targetID);
+                scanf("%d", &tempID);
+                foundNode = searchByID(L, tempID);
                 if (foundNode != NULL) {
                     printf("Nhap thong tin sv moi can chen:\n");
                     nhap(&x);
                     if (x.masv > 0) insert_After(&L, foundNode, x);
                 } else {
-                    printf("Khong tim thay sinh vien co ma %d!\n", targetID);
+                    printf("Khong tim thay sinh vien co ma %d!\n", tempID);
                 }
                 break;
 
             case 4:
                 printf("Nhap Ma SV can xoa: ");
-                scanf("%d", &targetID);
-                if (delete_ByID(&L, targetID)) {
-                    printf("Da xoa sinh vien co ma %d.\n", targetID);
+                scanf("%d", &tempID);
+                if (delete_ByID(&L, tempID)) {
+                    printf("Da xoa sinh vien co ma %d.\n", tempID);
                 } else {
-                    printf("Khong tim thay sinh vien co ma %d.\n", targetID);
+                    printf("Khong tim thay sinh vien co ma %d.\n", tempID);
                 }
                 break;
 
@@ -280,13 +280,13 @@ int main() {
 
             case 7:
                 printf("Nhap Ma SV can tim: ");
-                scanf("%d", &targetID);
-                foundNode = searchByID(L, targetID);
+                scanf("%d", &tempID);
+                foundNode = searchByID(L, tempID);
                 if (foundNode != NULL) {
                     printf("Thong tin sinh vien:\n");
                     in(foundNode->infor);
                 } else {
-                    printf("Khong tim thay sinh vien co ma %d.\n", targetID);
+                    printf("Khong tim thay sinh vien co ma %d.\n", tempID);
                 }
                 break;
 
